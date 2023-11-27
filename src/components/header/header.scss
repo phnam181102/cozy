@@ -1,0 +1,101 @@
+@use "../../scss/" as *;
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+
+    @include flex(center, unset);
+
+    img {
+        margin-right: 10px;
+        width: 50px;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+    }
+}
+
+.header {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(20, 20, 20, 0.25);
+    backdrop-filter: blur(15px);
+    
+
+    &.shrink {
+        background-color: $body-bg;
+        border-bottom: 1px solid #cccccc1f;
+        box-shadow: rgb(149 157 165 / 8%) 0px 0px 10px;
+    }
+
+    &__wrap {
+        @include flex(center, space-between);
+        height: 100%;
+        padding: 0 2rem;
+
+        @include mobile {
+            justify-content: center;
+        }
+    }
+
+    &__nav {
+        @include flex(center, unset);
+
+        & > * ~ * {
+            margin-left: 2.4rem;
+        }
+
+        li {
+            padding: 24px 0;
+            // font-weight: 700;
+            position: relative;
+            font-size: 16px;
+
+            &:not(.header__icon):hover {
+                opacity: 0.6;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .header__icon {
+            font-size: 22px;
+            line-height: 100%;
+        }
+
+        @include tablet {
+            display: none !important;
+        }
+
+        @include mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5rem;
+            width: 100%;
+            background-color: $body-bg;
+            padding: 0 2rem;
+            box-shadow: $box-shadow;
+
+            @include flex(center, space-between);
+
+            & > * ~ * {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @include mobile {
+        // display: none;
+        position: unset;
+    }
+}

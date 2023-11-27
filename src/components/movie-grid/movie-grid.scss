@@ -1,0 +1,50 @@
+@use "../../scss/" as *;
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 48px 16px;
+    margin-bottom: 3rem;
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    &__loadmore {
+        text-align: center;
+    }
+}
+
+// .main-content {
+//     .movie-grid {
+//         grid-template-columns: repeat(4, minmax(150px, 1fr));
+//     }
+// }
+
+.movie-search {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    input {
+        width: 100%;
+        padding-right: 8rem;
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 2px;
+
+        @include mobile {
+            right: 1px;
+            top: 1px;
+        }
+    }
+}
+
+.not-found {
+    padding-top: 50px;
+    text-align: center;
+}

@@ -1,0 +1,204 @@
+@use "../../scss/" as *;
+
+.detail-wrapper {
+    min-height: 100vh;
+}
+
+.banner {
+    height: 80vh;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include mobile {
+        height: 42vh;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background-image: linear-gradient(to top, #121212, rgba(0, 0, 0, 0));
+    }
+}
+
+.movie-content {
+    @include flex(center, flex-start);
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -360px;
+    position: relative;
+    padding: 0 2rem;
+
+    @include mobile {
+        flex-direction: column;
+        margin-bottom: 7rem;
+    }
+
+    &__poster {
+        flex: 1;
+        min-width: 200px;
+
+        @include mobile {
+            min-width: 240px;
+            margin-bottom: 3rem;
+        }
+
+        &__img {
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: $border-radius;
+            padding-top: 140%;
+            width: 20vw;
+
+            @include mobile {
+                padding-top: 130%;
+                background-position: bottom;
+            }
+        }
+    }
+
+    &__info {
+        width: 70%;
+        padding-left: 2rem;
+        position: relative;
+
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        & > * + * {
+            margin-top: 2rem;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .genres {
+            & > * ~ * {
+                margin-left: 0.5rem;
+            }
+
+            &__item {
+                padding: 0.2rem 0.6rem;
+                // padding: 0.5rem 1.2rem;
+                border: 2px solid $white;
+                border-radius: 25px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .overview {
+            max-width: 90%;
+            @include mobile {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+
+    &__item {
+        &__img {
+            padding-top: 160px;
+            background-size: cover;
+            margin-bottom: 0.5rem;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.video {
+    margin-bottom: 3rem;
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.btns > * ~ * {
+    margin-left: 1rem;
+}
+
+.btns {
+    .bx-play {
+        transform: scale(2);
+        line-height: 0.5;
+        margin-right: 8px;
+    }
+}
+
+.detail {
+    color: rgb(219, 219, 219);
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 20px;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    & > * {
+        margin-top: 3px;
+    }
+
+    * > div ~ div {
+        margin-top: 3px;
+    }
+
+    strong {
+        color: $white;
+    }
+}
+
+.similar {
+    .section__header {
+        margin-top: 6rem;
+    }
+}
+
+.react-read-more-read-less {
+    color: #c2c2fe;
+}
+
+// .title {
+//     background: url(https://wordpress.iqonic.design/streamit_wp/wp-content/plugins/streamit-extensions/assest/img/texure.jpg);
+//     font-weight: 800;
+//     background-repeat: repeat-x;
+//     background-position: 100% 100%;
+//     color: transparent;
+//     -webkit-font-smoothing: antialiased;
+//     -webkit-background-clip: text;
+//     -moz-background-clip: text;
+//     background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }

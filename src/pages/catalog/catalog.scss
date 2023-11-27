@@ -1,0 +1,25 @@
+.header + .section {
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.text-title {
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.category-slider {
+    margin: 10px 0 40px;
+}
+
+.main-content {
+    display: flex;
+    padding-top: 20px;
+
+    .movie-list {
+        padding-right: 15px;
+        width: calc(100% - 245px);
+    }
+}

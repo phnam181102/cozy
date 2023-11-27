@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+
+
+.play {
+    margin-left: -2rem;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 100%;
+        height: calc(100% + 50px);
+        background: rgba(20, 20, 20, 0.5);
+    }
+}
+
+.movie-content.detail-info {
+    max-width: unset;
+    margin-top: 3rem;
+
+    .movie-content__poster {
+        flex: unset;
+        min-width: unset;
+
+        &__img {
+            width: 255px;
+            height: 100%;
+        }
+    }
+
+
+    .movie-content__info {
+        width: unset;
+        padding-left: 3rem;
+        
+        .title {
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 500;
+        }
+
+        .overview {
+            max-width: 85%;
+        }
+    }
+}
+
+#player {
+    display: flex;
+    justify-content: center;
+}
+
+#video {
+    z-index: 80;
+}

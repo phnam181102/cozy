@@ -1,0 +1,62 @@
+@use "../../scss/" as *;
+
+.search {
+    margin-top: 50px;
+    @include flex(center, space-between);
+
+    &-wrapper {
+        @include flex(center, space-between);
+
+        @include mobile {
+            flex-grow: 1;
+        }
+    }
+
+    &-title {
+        font-size: 32px;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &-box {
+        background-color: rgba(225, 225, 225, 0.1);
+        color: #fff;
+        border-radius: 8px;
+        @include flex(center, space-between);
+
+        .search-icon {
+            padding: 0 12px;
+            line-height: 100%;
+            font-size: 18px;
+        }
+
+        .search-input {
+            width: 300px;
+            background-color: transparent;
+            color: #fff;
+            padding: 12px 10px 12px 0;
+
+            @include mobile {
+                flex-grow: 1;
+                font-size: 15px;
+                width: unset;
+            }
+        }
+
+        @include mobile {
+            flex-grow: 1;
+            height: 42px;
+        }
+    }
+
+    &-filter {
+        line-height: 100%;
+        margin-left: 9px;
+        border-radius: 8px;
+        font-size: 28px;
+        padding: 6px 7px;
+        background: orange;
+    }
+}
